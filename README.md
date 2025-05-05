@@ -1,13 +1,12 @@
-# SecureCorp Portal - Vulnerable Web Application (Path Traversal)
+# SecureCorp Portal 
 
 ## Description
 
-The **SecureCorp Portal** is a PHP-based demo web application **intentionally vulnerable** to **Path Traversal** attacks. It allows attackers to manipulate file paths and potentially access sensitive server files. This application is for **educational purposes** only.
+The **SecureCorp Portal** is a PHP-based demo web application **intentionally vulnerable** to **Path Traversal** and **Brute force** attacks. It allows attackers to manipulate file paths and potentially access sensitive server files. This application is for **educational purposes** only.
 
 ### Vulnerabilities
 
 - **Path Traversal**: Attackers can manipulate file paths to access sensitive files outside of the intended directory (e.g., `/etc/passwd`).
-- **Hardcoded Credentials**: Login uses static credentials (`admin/password123`).
 - **No Rate Limiting**: Vulnerable to brute force login attempts.
 - **Plaintext Password**: No password hashing.
 - **Unprotected Logs**: Logs sensitive info to `/var/log/php-server.log`.
@@ -44,10 +43,4 @@ The **SecureCorp Portal** is a PHP-based demo web application **intentionally vu
    tail -f /var/log/php-server.log
    ```
 
-### Security Recommendations
-
-- Fix Path Traversal by sanitizing file paths.
-- Hash passwords using `password_hash()`.
-- Implement rate limiting for login attempts.
-- Secure log access and sensitive files.
 
